@@ -1,5 +1,6 @@
 tmp 
 tmp/tarantula
-log
+log/*.*
+*.log
 *.sqlite3
 test/coverage/*

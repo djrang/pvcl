@@ -3,11 +3,33 @@
 <table>
   
   <tr>
-    <td><%= render :partial => "new_checklist", :object => "submit_setup" %></td>
-    <td><%= render :partial => "new_checklist", :object => "submit_audit" %></td>
-    <td></td>
+    <td>
+      
+      <div id="submit_setup">
+        <%= render :partial => "new_checklist", :object => "submit_setup" %>
+      </div>
+
+      <div id="submit_setup_completed">
+        <%= render :partial => "completed_checklist" %>
+      </div>
+      
+    </td>
+    <td>
+      
+      <div id="submit_audit">
+        <%= render :partial => "new_checklist", :object => "submit_audit" %>
+      </div>
+
+      <div id="submit_audit_completed">
+        <%= render :partial => "completed_checklist" %>
+      </div>
+      
+    </td>
+    <td>Does everything match</td>
     
   </tr>
   
 </table>
 
+<%= javascript_tag("$('submit_setup_completed').hide()") %>
+<%= javascript_tag("$('submit_audit').hide()") %>

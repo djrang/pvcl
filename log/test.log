@@ -1,0 +1,6 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "checklists" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "checklists" [0m
+  [4;36;1mChecklist Load (0.3ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 980190962) [0m
+  [4;35;1mChecklist Load (0.4ms)[0m   [0mSELECT * FROM "checklists" WHERE ("checklists"."id" = 980190962) [0m
+  [4;36;1mChecklist Load (0.4ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 980190962) [0m
+  [4;35;1mChecklist Load (0.4ms)[0m   [0mSELECT * FROM "checklists" WHERE ("checklists"."id" = 980190962) [0m
