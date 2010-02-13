@@ -19,6 +19,12 @@ ActiveRecord::Schema.define(:version => 20100213151813) do
     t.string   "tool_down"
     t.string   "tool_bottom"
     t.string   "orientation"
+    t.integer  "verification_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "verifications", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -662,3 +662,678 @@ Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:03:25) [
 Rendering template within layouts/application
 Rendering verification/index
 Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:17:23) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/verification/_new_checklist.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/verification/_new_checklist.html.erb:3
+    app/views/verification/index.html.erb:6
+
+Rendered rescues/_trace (45.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:18:47) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (17.2ms)
+Completed in 25ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:31:44) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (6.2ms)
+Rendered verification/_new_checklist (64.2ms)
+Completed in 81ms (View: 77, DB: 0) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChecklists (20100213151813)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "verifications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "checklists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "badge" varchar(255), "part_number" integer, "order_number" varchar(255), "layer" varchar(255), "tool_down" varchar(255), "tool_bottom" varchar(255), "orientation" varchar(255), "verification_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100213151813')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("checklists")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("verifications")[0m
+  [4;36;1mVerification Create (0.6ms)[0m   [0;1mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 18:44:35', '2010-02-13 18:44:35')[0m
+  [4;35;1mChecklist Create (0.2ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 18:44:35', 1, NULL, 'Dan', NULL, NULL, NULL, NULL, NULL, '2010-02-13 18:44:35')[0m
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:59:14) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.5ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 24ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:59:59) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.5ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:00:03) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.1ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:00:18) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.5ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:00:52) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.6ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:01:16) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.7ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:01:31) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.7ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:01:33) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.3ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:01:36) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.6ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 76ms (View: 68, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:01:43) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (2.1ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:02:24) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.5ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:02:26) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.1ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:02:40) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+
+ActionView::TemplateError (undefined local variable or method `jones' for #<ActionView::Base:0x2394ffc>) on line #2 of app/views/verification/_new_checklist.html.erb:
+1: <h1>New checklist</h1>
+2: <%= jones %>
+3: 
+4: <%= link_to 'Back', checklists_path %>
+
+    app/views/verification/_new_checklist.html.erb:2
+    app/views/verification/index.html.erb:6
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:03:34) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+
+ActionView::TemplateError (undefined local variable or method `jones' for #<ActionView::Base:0x21b3bfc>) on line #2 of app/views/verification/_new_checklist.html.erb:
+1: <h1>New checklist</h1>
+2: <%= jones %>
+3: 
+4: <%= link_to 'Back', checklists_path %>
+
+    app/views/verification/_new_checklist.html.erb:2
+    app/views/verification/index.html.erb:6
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:03:58) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (0.7ms)
+Rendered verification/_new_checklist (0.1ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:25:03) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (7.7ms)
+Rendered verification/_new_checklist (4.2ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:25:22) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+
+ActionView::TemplateError (undefined local variable or method `object2' for #<ActionView::Base:0x2200664>) on line #2 of app/views/verification/_new_checklist.html.erb:
+1: <h1>New checklist</h1>
+2: <% form_for(object2) do |f| %>
+3:   <%= f.error_messages %>
+4: 
+5:   <p>
+
+    app/views/verification/_new_checklist.html.erb:2
+    app/views/verification/index.html.erb:6
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:25:31) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (7.7ms)
+Rendered verification/_new_checklist (4.3ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-02-13 13:26:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"kjkjk", "tool_bottom"=>"jkjk", "badge"=>"dfdkj", "order_number"=>"dkjfk", "tool_down"=>"jkksjdfkj", "layer"=>"ksjsj", "part_number"=>"4948"}}
+
+NameError (uninitialized constant ChecklistsController):
+  
+
+Rendered rescues/_trace (24.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:35:08) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (6.5ms)
+Rendered verification/_new_checklist (4.4ms)
+Completed in 28ms (View: 19, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 13:35:21) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#submit_audit (for 127.0.0.1 at 2010-02-13 13:35:38) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+
+ActionView::MissingTemplate (Missing template verification/submit_audit.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:36:40) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (5.8ms)
+Rendered verification/_new_checklist (3.8ms)
+Completed in 26ms (View: 18, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:36:47) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.0ms)
+Rendered verification/_new_checklist (3.7ms)
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:36:50) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.1ms)
+Rendered verification/_new_checklist (3.9ms)
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:37:46) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (6.1ms)
+Rendered verification/_new_checklist (4.0ms)
+Completed in 27ms (View: 19, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 13:37:50) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:38:40) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+
+ActionView::TemplateError (undefined local variable or method `object_name' for #<ActionView::Base:0x216f308>) on line #2 of app/views/verification/_new_checklist.html.erb:
+1: <h1>New checklist</h1>
+2: <% form_for :checklist, :url => { :action => object_name } do |f| %>
+3:   <%= f.error_messages %>
+4: 
+5:   <p>
+
+    app/views/verification/_new_checklist.html.erb:2
+    app/views/verification/index.html.erb:6
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:38:43) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+
+ActionView::TemplateError (undefined local variable or method `object_name' for #<ActionView::Base:0x23d4a1c>) on line #2 of app/views/verification/_new_checklist.html.erb:
+1: <h1>New checklist</h1>
+2: <% form_for :checklist, :url => { :action => object_name } do |f| %>
+3:   <%= f.error_messages %>
+4: 
+5:   <p>
+
+    app/views/verification/_new_checklist.html.erb:2
+    app/views/verification/index.html.erb:6
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:38:52) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (6.2ms)
+Rendered verification/_new_checklist (4.8ms)
+Completed in 86ms (View: 79, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:42:42) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.5ms)
+Rendered verification/_new_checklist (4.1ms)
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 13:42:49) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"flksjd", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+
+NameError (undefined local variable or method `parameters' for #<VerificationController:0x2429a1c>):
+  app/controllers/verification_controller.rb:9:in `submit_setup'
+
+Rendered rescues/_trace (27.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:43:48) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.4ms)
+Rendered verification/_new_checklist (4.0ms)
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 13:43:52) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"djfklsdj", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:45:49) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.4ms)
+Rendered verification/_new_checklist (4.0ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 13:45:56) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"jfklsdj", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+
+ActiveRecord::RecordInvalid (Validation failed: Part number can't be blank, Order number can't be blank, Layer can't be blank, Tool down can't be blank, Tool bottom can't be blank, Orientation can't be blank):
+  app/controllers/verification_controller.rb:10:in `submit_setup'
+
+Rendered rescues/_trace (97.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 13:46:09) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"jfklsdj", "order_number"=>"kdkddka", "tool_down"=>"", "layer"=>"", "part_number"=>"099"}}
+
+ActiveRecord::RecordInvalid (Validation failed: Layer can't be blank, Tool down can't be blank, Tool bottom can't be blank, Orientation can't be blank):
+  app/controllers/verification_controller.rb:10:in `submit_setup'
+
+Rendered rescues/_trace (30.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 13:46:21) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"kkkk", "tool_bottom"=>"kk", "badge"=>"jfklsdj", "order_number"=>"kdkddka", "tool_down"=>"kjkj", "layer"=>"dfkdja", "part_number"=>"099"}}
+  [4;36;1mChecklist Create (0.4ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 19:46:21', NULL, 'kkkk', 'jfklsdj', 'kk', 'kdkddka', 'kjkj', 99, 'dfkdja', '2010-02-13 19:46:21')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 13:49:00) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.4ms)
+Rendered verification/_new_checklist (4.0ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_audit (for 127.0.0.1 at 2010-02-13 13:49:26) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"cool", "tool_bottom"=>"is ", "badge"=>"test of audit", "order_number"=>"check", "tool_down"=>"tony", "layer"=>"check", "part_number"=>"888"}}
+  [4;35;1mChecklist Create (0.4ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 19:49:26', NULL, 'cool', 'test of audit', 'is ', 'check', 'tony', 888, 'check', '2010-02-13 19:49:26')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_audit.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:03:11) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.1ms)
+Rendered verification/_new_checklist (4.0ms)
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:03:18) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.2ms)
+Rendered verification/_new_checklist (4.0ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:04:08) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"setting", "tool_bottom"=>"set up down", "badge"=>"123", "order_number"=>"testsetup", "tool_down"=>"setting up", "layer"=>"setup", "part_number"=>"123098"}}
+  [4;36;1mVerification Create (0.3ms)[0m   [0;1mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:04:08', '2010-02-13 20:04:08')[0m
+  [4;35;1mChecklist Create (0.2ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:04:08', 2, 'setting', '123', 'set up down', 'testsetup', 'setting up', 123098, 'setup', '2010-02-13 20:04:08')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:05:58) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (6.9ms)
+Rendered verification/_new_checklist (5.2ms)
+Completed in 25ms (View: 17, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:06:53) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"down", "tool_bottom"=>"88555", "badge"=>"123", "order_number"=>"testcheck", "tool_down"=>"4888", "layer"=>"checking test", "part_number"=>"123098"}}
+  [4;36;1mVerification Create (0.3ms)[0m   [0;1mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:06:53', '2010-02-13 20:06:53')[0m
+  [4;35;1mChecklist Create (0.2ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:06:53', 3, 'down', '123', '88555', 'testcheck', '4888', 123098, 'checking test', '2010-02-13 20:06:53')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#submit_audit (for 127.0.0.1 at 2010-02-13 14:07:01) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"up", "tool_bottom"=>"888555", "badge"=>"234", "order_number"=>"testcheck", "tool_down"=>"4888", "layer"=>"checking the test", "part_number"=>"123098"}}
+  [4;36;1mChecklist Create (0.4ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:07:01', 3, 'up', '234', '888555', 'testcheck', '4888', 123098, 'checking the test', '2010-02-13 20:07:01')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_audit.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:09:00) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (6.6ms)
+Rendered verification/_new_checklist (4.7ms)
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:09:04) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"down", "tool_bottom"=>"88555", "badge"=>"123", "order_number"=>"testcheck", "tool_down"=>"4888", "layer"=>"checking test", "part_number"=>"123098"}}
+  [4;35;1mVerification Create (0.4ms)[0m   [0mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:09:04', '2010-02-13 20:09:04')[0m
+  [4;36;1mChecklist Create (0.1ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:09:04', 4, 'down', '123', '88555', 'testcheck', '4888', 123098, 'checking test', '2010-02-13 20:09:04')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:09:09) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (5.0ms)
+Rendered verification/_new_checklist (4.7ms)
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:09:21) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"1", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>""}}
+
+ActiveRecord::RecordInvalid (Validation failed: Checklists is invalid):
+  app/controllers/verification_controller.rb:13:in `submit_setup'
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (unprocessable_entity)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:09:52) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"7", "tool_bottom"=>"6", "badge"=>"1", "order_number"=>"3", "tool_down"=>"5", "layer"=>"4", "part_number"=>"2"}}
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (5.2ms)
+Rendered verification/_new_checklist (4.7ms)
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:10:42) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"111", "tool_bottom"=>"111", "badge"=>"111", "order_number"=>"111", "tool_down"=>"111", "layer"=>"111", "part_number"=>"111"}}
+  [4;35;1mVerification Create (0.4ms)[0m   [0mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:10:42', '2010-02-13 20:10:42')[0m
+  [4;36;1mChecklist Create (0.1ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:10:42', 5, '111', '111', '111', '111', '111', 111, '111', '2010-02-13 20:10:42')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#submit_audit (for 127.0.0.1 at 2010-02-13 14:11:15) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"222", "tool_bottom"=>"222", "badge"=>"222", "order_number"=>"222", "tool_down"=>"222", "layer"=>"222", "part_number"=>"2222"}}
+  [4;35;1mChecklist Create (0.3ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:11:15', 5, '222', '222', '222', '222', '222', 2222, '222', '2010-02-13 20:11:15')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_audit.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:11:53) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (5.1ms)
+Rendered verification/_new_checklist (4.6ms)
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_audit (for 127.0.0.1 at 2010-02-13 14:13:30) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"krieg", "tool_bottom"=>"66", "badge"=>"Ajax2ndtest", "order_number"=>"3333", "tool_down"=>"55", "layer"=>"444", "part_number"=>"2222"}}
+  [4;36;1mVerification Create (0.4ms)[0m   [0;1mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:13:30', '2010-02-13 20:13:30')[0m
+  [4;35;1mChecklist Create (0.2ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:13:30', 6, 'krieg', 'Ajax2ndtest', '66', '3333', '55', 2222, '444', '2010-02-13 20:13:30')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_audit.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:14:04) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (5.1ms)
+Rendered verification/_new_checklist (4.9ms)
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:14:06) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"blitz", "tool_bottom"=>"55", "badge"=>"Ajaxtest", "order_number"=>"22222", "tool_down"=>"44", "layer"=>"3333", "part_number"=>"1111"}}
+  [4;36;1mVerification Create (0.3ms)[0m   [0;1mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:14:07', '2010-02-13 20:14:07')[0m
+  [4;35;1mChecklist Create (0.1ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:14:07', 7, 'blitz', 'Ajaxtest', '55', '22222', '44', 1111, '3333', '2010-02-13 20:14:07')[0m
+
+ActionView::MissingTemplate (Missing template verification/submit_setup.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:16:29) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (5.0ms)
+Rendered verification/_new_checklist (4.7ms)
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:16:53) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"00", "tool_bottom"=>"00", "badge"=>"blinke", "order_number"=>"00", "tool_down"=>"00", "layer"=>"00", "part_number"=>"00"}}
+  [4;36;1mVerification Create (0.4ms)[0m   [0;1mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:16:53', '2010-02-13 20:16:53')[0m
+  [4;35;1mChecklist Create (0.1ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:16:53', 8, '00', 'blinke', '00', '00', '00', 0, '00', '2010-02-13 20:16:53')[0m
+Completed in 20ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/verification/submit_setup]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 14:18:20) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Rendered verification/_new_checklist (4.9ms)
+Rendered verification/_new_checklist (4.7ms)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:18:53) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"crazy", "tool_bottom"=>"mybottomtool", "badge"=>"crazydude", "order_number"=>"myorder", "tool_down"=>"mydowntool", "layer"=>"mylayer", "part_number"=>"994"}}
+  [4;36;1mVerification Create (0.3ms)[0m   [0;1mINSERT INTO "verifications" ("updated_at", "created_at") VALUES('2010-02-13 20:18:53', '2010-02-13 20:18:53')[0m
+  [4;35;1mChecklist Create (0.1ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:18:53', 9, 'crazy', 'crazydude', 'mybottomtool', 'myorder', 'mydowntool', 994, 'mylayer', '2010-02-13 20:18:53')[0m
+Completed in 16ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/verification/submit_setup]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:19:22) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"crazy", "tool_bottom"=>"mybottomtool", "badge"=>"crazydude", "order_number"=>"myorder", "tool_down"=>"mydowntool", "layer"=>"mylayer", "part_number"=>"994"}}
+  [4;36;1mChecklist Create (0.3ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:19:22', 9, 'crazy', 'crazydude', 'mybottomtool', 'myorder', 'mydowntool', 994, 'mylayer', '2010-02-13 20:19:22')[0m
+Completed in 14ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/verification/submit_setup]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:19:22) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"crazy", "tool_bottom"=>"mybottomtool", "badge"=>"crazydude", "order_number"=>"myorder", "tool_down"=>"mydowntool", "layer"=>"mylayer", "part_number"=>"994"}}
+  [4;35;1mChecklist Create (0.4ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:19:22', 9, 'crazy', 'crazydude', 'mybottomtool', 'myorder', 'mydowntool', 994, 'mylayer', '2010-02-13 20:19:22')[0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/verification/submit_setup]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:19:22) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"crazy", "tool_bottom"=>"mybottomtool", "badge"=>"crazydude", "order_number"=>"myorder", "tool_down"=>"mydowntool", "layer"=>"mylayer", "part_number"=>"994"}}
+  [4;36;1mChecklist Create (0.4ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:19:22', 9, 'crazy', 'crazydude', 'mybottomtool', 'myorder', 'mydowntool', 994, 'mylayer', '2010-02-13 20:19:22')[0m
+Completed in 15ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/verification/submit_setup]
+
+
+Processing VerificationController#submit_setup (for 127.0.0.1 at 2010-02-13 14:19:22) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"crazy", "tool_bottom"=>"mybottomtool", "badge"=>"crazydude", "order_number"=>"myorder", "tool_down"=>"mydowntool", "layer"=>"mylayer", "part_number"=>"994"}}
+  [4;35;1mChecklist Create (0.4ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "verification_id", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 20:19:22', 9, 'crazy', 'crazydude', 'mybottomtool', 'myorder', 'mydowntool', 994, 'mylayer', '2010-02-13 20:19:22')[0m
+Completed in 15ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/verification/submit_setup]
