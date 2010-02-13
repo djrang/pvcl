@@ -614,3 +614,51 @@ ActionView::TemplateError (undefined method `checklist_path' for #<ActionView::B
 Rendered rescues/_trace (36.1ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:59:28) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 92ms (View: 90, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:59:37) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:59:40) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:00:17) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:00:21) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:03:19) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:03:23) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 12:03:25) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]

@@ -8,9 +8,9 @@
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
-<h1>Preflight Check List</h1>
+
 <p style="color: green"><%= flash[:notice] %></p>
-<%= link_to "Open Checklist", :controller => "verification", :action => "index"%>
+<%= link_to "<h1>Preflight Check List</h1>", root_url%>
 <%= yield %>
 
 </body>
