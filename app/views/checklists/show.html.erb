@@ -1,0 +1,38 @@
+<p>
+  <b>Badge:</b>
+  <%=h @checklist.badge %>
+</p>
+
+<p>
+  <b>Part number:</b>
+  <%=h @checklist.part_number %>
+</p>
+
+<p>
+  <b>Order number:</b>
+  <%=h @checklist.order_number %>
+</p>
+
+<p>
+  <b>Layer:</b>
+  <%=h @checklist.layer %>
+</p>
+
+<p>
+  <b>Tool down:</b>
+  <%=h @checklist.tool_down %>
+</p>
+
+<p>
+  <b>Tool bottom:</b>
+  <%=h @checklist.tool_bottom %>
+</p>
+
+<p>
+  <b>Orientation:</b>
+  <%=h @checklist.orientation %>
+</p>
+
+
+<%= link_to 'Edit', edit_checklist_path(@checklist) %> |
+<%= link_to 'Back', checklists_path %>

@@ -1,0 +1,616 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateChecklists (20100213151813)
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE TABLE "checklists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "badge" varchar(255), "part_number" integer, "order_number" varchar(255), "layer" varchar(255), "tool_down" varchar(255), "tool_bottom" varchar(255), "orientation" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100213151813')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("checklists")[0m
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:27:26) [GET]
+  [4;36;1mChecklist Load (0.4ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 169ms (View: 165, DB: 0) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 09:27:41) [GET]
+Rendering template within layouts/checklists
+Rendering checklists/new
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/checklists/new]
+
+
+Processing ChecklistsController#create (for 127.0.0.1 at 2010-02-13 09:29:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"Gimbals Up", "tool_bottom"=>"0944448", "badge"=>"54276", "order_number"=>"C200034", "tool_down"=>"0944449", "layer"=>"NiAu", "part_number"=>"000001"}}
+  [4;35;1mChecklist Create (0.5ms)[0m   [0mINSERT INTO "checklists" ("updated_at", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 15:29:16', 'Gimbals Up', '54276', '0944448', 'C200034', '0944449', 1, 'NiAu', '2010-02-13 15:29:16')[0m
+Redirected to http://0.0.0.0:3000/checklists/1
+Completed in 13ms (DB: 1) | 302 Found [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#show (for 127.0.0.1 at 2010-02-13 09:29:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mChecklist Load (0.3ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 1) [0m
+Rendering template within layouts/checklists
+Rendering checklists/show
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/checklists/1]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:46:53) [GET]
+  [4;35;1mChecklist Load (0.5ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 09:47:05) [GET]
+Rendering template within layouts/checklists
+Rendering checklists/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/checklists/new]
+
+
+Processing ChecklistsController#create (for 127.0.0.1 at 2010-02-13 09:49:54) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"Gimbals Dn", "tool_bottom"=>"0944438", "badge"=>"54176", "order_number"=>"C2000035", "tool_down"=>"0944439", "layer"=>"1st Stage", "part_number"=>"1000003"}}
+  [4;36;1mChecklist Create (0.4ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 15:49:54', 'Gimbals Dn', '54176', '0944438', 'C2000035', '0944439', 1000003, '1st Stage', '2010-02-13 15:49:54')[0m
+Redirected to http://0.0.0.0:3000/checklists/2
+Completed in 14ms (DB: 0) | 302 Found [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#show (for 127.0.0.1 at 2010-02-13 09:49:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mChecklist Load (0.3ms)[0m   [0mSELECT * FROM "checklists" WHERE ("checklists"."id" = 2) [0m
+Rendering template within layouts/checklists
+Rendering checklists/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/checklists/2]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:49:57) [GET]
+  [4;36;1mChecklist Load (0.6ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#edit (for 127.0.0.1 at 2010-02-13 09:50:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mChecklist Load (0.3ms)[0m   [0mSELECT * FROM "checklists" WHERE ("checklists"."id" = 1) [0m
+Rendering template within layouts/checklists
+Rendering checklists/edit
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/checklists/1/edit]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:50:57) [GET]
+  [4;36;1mChecklist Load (0.8ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#edit (for 127.0.0.1 at 2010-02-13 09:51:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mChecklist Load (0.3ms)[0m   [0mSELECT * FROM "checklists" WHERE ("checklists"."id" = 1) [0m
+Rendering template within layouts/checklists
+Rendering checklists/edit
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/checklists/1/edit]
+
+
+Processing ChecklistsController#update (for 127.0.0.1 at 2010-02-13 09:51:30) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "id"=>"1", "checklist"=>{"orientation"=>"Gimbals Up", "tool_bottom"=>"0944448", "badge"=>"54276", "order_number"=>"C200034", "tool_down"=>"0944449", "layer"=>"NiAu", "part_number"=>"188"}}
+  [4;36;1mChecklist Load (0.3ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 1) [0m
+  [4;35;1mChecklist Update (0.3ms)[0m   [0mUPDATE "checklists" SET "part_number" = 188, "updated_at" = '2010-02-13 15:51:30' WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/checklists/1
+Completed in 11ms (DB: 1) | 302 Found [http://0.0.0.0/checklists/1]
+
+
+Processing ChecklistsController#show (for 127.0.0.1 at 2010-02-13 09:51:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mChecklist Load (0.3ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 1) [0m
+Rendering template within layouts/checklists
+Rendering checklists/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/checklists/1]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:51:32) [GET]
+  [4;35;1mChecklist Load (0.6ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#edit (for 127.0.0.1 at 2010-02-13 09:51:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mChecklist Load (0.3ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 1) [0m
+Rendering template within layouts/checklists
+Rendering checklists/edit
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/checklists/1/edit]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:51:42) [GET]
+  [4;35;1mChecklist Load (0.6ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 14ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 09:51:43) [GET]
+Rendering template within layouts/checklists
+Rendering checklists/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/checklists/new]
+
+
+Processing ChecklistsController#create (for 127.0.0.1 at 2010-02-13 09:51:49) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"", "order_number"=>"", "tool_down"=>"", "layer"=>"", "part_number"=>"gjghj"}}
+  [4;36;1mChecklist Create (0.4ms)[0m   [0;1mINSERT INTO "checklists" ("updated_at", "orientation", "badge", "tool_bottom", "order_number", "tool_down", "part_number", "layer", "created_at") VALUES('2010-02-13 15:51:49', '', '', '', '', '', 0, '', '2010-02-13 15:51:49')[0m
+Redirected to http://0.0.0.0:3000/checklists/3
+Completed in 11ms (DB: 0) | 302 Found [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#show (for 127.0.0.1 at 2010-02-13 09:51:49) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mChecklist Load (0.3ms)[0m   [0mSELECT * FROM "checklists" WHERE ("checklists"."id" = 3) [0m
+Rendering template within layouts/checklists
+Rendering checklists/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/checklists/3]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:54:39) [GET]
+  [4;36;1mChecklist Load (0.9ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#edit (for 127.0.0.1 at 2010-02-13 09:54:46) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mChecklist Load (0.3ms)[0m   [0mSELECT * FROM "checklists" WHERE ("checklists"."id" = 3) [0m
+Rendering template within layouts/checklists
+Rendering checklists/edit
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/checklists/3/edit]
+
+
+Processing ChecklistsController#update (for 127.0.0.1 at 2010-02-13 09:54:52) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"GIgfWQW0r5EHnRgtZSVk1aekQsBTQSeHDNKqNTBtZzM=", "id"=>"3", "checklist"=>{"orientation"=>"", "tool_bottom"=>"", "badge"=>"", "order_number"=>"hghgh", "tool_down"=>"", "layer"=>"", "part_number"=>"0"}}
+  [4;36;1mChecklist Load (0.3ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 3) [0m
+  [4;35;1mChecklist Update (0.3ms)[0m   [0mUPDATE "checklists" SET "order_number" = 'hghgh', "updated_at" = '2010-02-13 15:54:52' WHERE "id" = 3[0m
+Redirected to http://0.0.0.0:3000/checklists/3
+Completed in 12ms (DB: 1) | 302 Found [http://0.0.0.0/checklists/3]
+
+
+Processing ChecklistsController#show (for 127.0.0.1 at 2010-02-13 09:54:52) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mChecklist Load (0.3ms)[0m   [0;1mSELECT * FROM "checklists" WHERE ("checklists"."id" = 3) [0m
+Rendering template within layouts/checklists
+Rendering checklists/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/checklists/3]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 09:54:55) [GET]
+  [4;35;1mChecklist Load (0.7ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 10:18:09) [GET]
+Rendering template within layouts/checklists
+Rendering checklists/new
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/checklists/new]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 10:50:48) [GET]
+  [4;36;1mChecklist Load (1.0ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 10:52:42) [GET]
+  [4;35;1mChecklist Load (0.8ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/checklists
+Rendering checklists/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 10:53:13) [GET]
+  [4;36;1mChecklist Load (0.9ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+
+ActionView::MissingTemplate (Missing template checklists/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 10:58:26) [GET]
+  [4;35;1mChecklist Load (0.8ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+Completed in 27ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 10:58:47) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 10:58:55) [GET]
+  [4;36;1mChecklist Load (0.9ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 10:59:39) [GET]
+  [4;35;1mChecklist Load (0.9ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+Completed in 18ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 10:59:42) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/checklists/new]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 10:59:45) [GET]
+  [4;36;1mChecklist Load (0.8ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+Completed in 17ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 11:01:52) [GET]
+  [4;35;1mChecklist Load (0.8ms)[0m   [0mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+Completed in 21ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 11:09:01) [GET]
+  [4;36;1mChecklist Load (0.8ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/checklists]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 11:09:03) [GET]
+
+ActionController::RoutingError (No route matches "/verification" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 11:14:22) [GET]
+
+ActionController::RoutingError (No route matches "/verification" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 11:15:17) [GET]
+
+ActionController::RoutingError (No route matches "/verification/index" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:17:55) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 21ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/verification/index]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:22:20) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/verification/index]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:22:27) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:22:37) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:22:39) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:26:02) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 11:26:13) [GET]
+  [4;36;1mChecklist Load (0.8ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+
+ActionView::TemplateError (undefined method `to_sym' for nil:NilClass) on line #23 of app/views/checklists/index.html.erb:
+20:     <td><%=h checklist.tool_down %></td>
+21:     <td><%=h checklist.tool_bottom %></td>
+22:     <td><%=h checklist.orientation %></td>
+23:     <td><%= link_to 'Show', checklist %></td>
+24:     <td><%= link_to 'Edit', edit_checklist_path(checklist) %></td>
+25:     <td><%= link_to 'Destroy', checklist, :confirm => 'Are you sure?', :method => :delete %></td>
+26:   </tr>
+
+    (eval):20:in `checklist_path'
+    app/views/checklists/index.html.erb:23
+    app/views/checklists/index.html.erb:14:in `each'
+    app/views/checklists/index.html.erb:14
+
+Rendered rescues/_trace (107.7ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 11:26:19) [GET]
+
+ActionController::RoutingError (No route matches "/checklist" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:28:00) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x24505a4>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:28:40) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x2225c5c>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:29:03) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x2530870>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:29:08) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x22c2278>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (103.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:29:12) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-13 11:29:18) [GET]
+
+ActionController::RoutingError (No route matches "/checklist" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:29:25) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x2399340>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (38.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:30:58) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x21d5428>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (39.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:31:00) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x23530fc>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (41.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VerificationController#index (for 127.0.0.1 at 2010-02-13 11:31:23) [GET]
+Rendering template within layouts/application
+Rendering verification/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/dan]
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-02-13 11:32:26) [GET]
+
+NameError (uninitialized constant ChecklistController):
+  
+
+Rendered rescues/_trace (23.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#new (for 127.0.0.1 at 2010-02-13 11:32:42) [GET]
+Rendering template within layouts/application
+Rendering checklists/new
+
+ActionView::TemplateError (undefined method `checklists_path' for #<ActionView::Base:0x236b1d4>) on line #3 of app/views/checklists/new.html.erb:
+1: <h1>New checklist</h1>
+2: 
+3: <% form_for(@checklist) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/checklists/new.html.erb:3
+    app/controllers/checklists_controller.rb:29:in `new'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ChecklistsController#list (for 127.0.0.1 at 2010-02-13 11:33:24) [GET]
+
+ActionController::UnknownAction (No action responded to list. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ChecklistsController#show (for 127.0.0.1 at 2010-02-13 11:33:45) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Checklist without an ID):
+  app/controllers/checklists_controller.rb:16:in `show'
+
+Rendered rescues/_trace (28.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ChecklistsController#index (for 127.0.0.1 at 2010-02-13 11:33:58) [GET]
+  [4;36;1mChecklist Load (0.7ms)[0m   [0;1mSELECT * FROM "checklists" [0m
+Rendering template within layouts/application
+Rendering checklists/index
+
+ActionView::TemplateError (undefined method `checklist_path' for #<ActionView::Base:0x237c04c>) on line #23 of app/views/checklists/index.html.erb:
+20:     <td><%=h checklist.tool_down %></td>
+21:     <td><%=h checklist.tool_bottom %></td>
+22:     <td><%=h checklist.orientation %></td>
+23:     <td><%= link_to 'Show', checklist %></td>
+24:     <td><%= link_to 'Edit', edit_checklist_path(checklist) %></td>
+25:     <td><%= link_to 'Destroy', checklist, :confirm => 'Are you sure?', :method => :delete %></td>
+26:   </tr>
+
+    app/views/checklists/index.html.erb:23
+    app/views/checklists/index.html.erb:14:in `each'
+    app/views/checklists/index.html.erb:14
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)

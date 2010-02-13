@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  badge: MyString
+  part_number: 1
+  order_number: MyString
+  layer: MyString
+  tool_down: MyString
+  tool_bottom: MyString
+  orientation: MyString
+
+two:
+  badge: MyString
+  part_number: 1
+  order_number: MyString
+  layer: MyString
+  tool_down: MyString
+  tool_bottom: MyString
+  orientation: MyString
