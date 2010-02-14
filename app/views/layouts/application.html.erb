@@ -5,13 +5,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <%= javascript_include_tag :defaults %>
-  <title>Checklists: <%= controller.action_name %></title>
+  <title>Checklist</title>
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
 
 <p style="color: green"><%= flash[:notice] %></p>
-<%= link_to "<h1>Preflight Check List</h1>", root_url%>
+<%= link_to "<h1 align='center'>Preflight Check List</h1>", root_url%>
 <%= yield %>
 
 </body>
