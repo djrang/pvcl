@@ -3,4 +3,5 @@ tmp/tarantula
 log/*.*
 *.log
 *.sqlite3
+nbproject/*
 test/coverage/*
